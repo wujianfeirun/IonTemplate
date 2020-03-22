@@ -1,0 +1,187 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"  text="返回" icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- 按钮  -->
+  <ion-text color="primary" style="text-transform:none">按钮的fill属性:clear/outline/solid</ion-text>
+  <div>
+    <ion-button (click)="onClick()" fill="clear">
+      透明
+    </ion-button>
+    <ion-button (click)="onClick()" fill="outline">
+      透明带边框
+    </ion-button>
+    <ion-button (click)="onClick()" fill="solid" style="text-transform:none">
+      默认
+    </ion-button>
+  </div>
+
+  <ion-text color="primary" style="text-transform:none">按钮的size属性:large/default/small</ion-text>
+  <div>
+    <ion-button (click)="onClick()" color="secondary" size="large">
+      大按钮
+    </ion-button>
+    <ion-button (click)="onClick()" color="primary" size="midumn">
+      默认
+    </ion-button>
+    <ion-button (click)="onClick()" color="secondary" size="small">
+      小按钮
+    </ion-button>
+  </div>
+
+
+  <ion-text color="primary" style="text-transform:none">按钮的expand属性:full/block/default</ion-text>
+  <div>
+    <ion-button (click)="onClick()" expand="full">
+      全角按钮
+    </ion-button>
+    <ion-button (click)="onClick()" expand="block">
+      带圆角全角按钮
+    </ion-button>
+    <ion-button (click)="onClick()" >
+      默认
+    </ion-button>
+  </div>
+
+  <ion-text color="secondary" style="text-transform:none">图标按钮</ion-text>
+  <div>
+    <ion-button (click)="onClick()">
+      <ion-icon slot="start" name="add"></ion-icon>
+      图标按钮
+    </ion-button>
+  </div>
+
+  <ion-text color="thirditry" style="text-transform:none">分块按钮segment-button:</ion-text>
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button>
+      <ion-label>1</ion-label>
+    </ion-segment-button>
+    <ion-segment-button>
+      <ion-label>2</ion-label>
+    </ion-segment-button>
+    <ion-segment-button>
+      <ion-label>3</ion-label>
+    </ion-segment-button>
+    <ion-segment-button>
+      <ion-label>4</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+
+  <!-- 浮动按钮 -->
+  <!-- <ion-fab vertical="bottom" horizontal="left"  slot="fixed">
+    <ion-fab-button size="small">浮动按钮</ion-fab-button>
+  </ion-fab> -->
+
+  <!-- 浮动按钮组,第一个点击之后，后面list中的按钮才会显示 -->
+  <!-- <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button size="small" color="warning"><ion-icon name="arrow-forward"></ion-icon></ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button><ion-icon name="add"></ion-icon></ion-fab-button>
+      <ion-fab-button><ion-icon name="person-add"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab> -->
+
+
+
+
+  <!-- 列表 -->
+  <ion-list inset>
+    <ion-item *ngFor="let item of listText" >
+            {{item}}
+    </ion-item>
+  </ion-list>
+
+  <!-- 列表   thumbnail方块图-->
+  <ion-list >
+    <ion-item *ngFor="let item of listObj">
+            <ion-thumbnail item-start>
+                <img src="./assets/icon/{{item.photo}}">
+            </ion-thumbnail>
+            <h2>{{item.title}}</h2>
+            <p>{{item.detail}}</p>
+    </ion-item>
+  </ion-list>
+
+  <!-- 列表   avator头像-->
+  <ion-list >
+    <ion-item *ngFor="let item of listObj">
+            <ion-avatar item-start>
+                <img src="./assets/icon/{{item.photo}}">
+            </ion-avatar>
+            <h2>{{item.title}}</h2>
+            <p>{{item.detail}}</p>
+    </ion-item>
+  </ion-list>
+
+   <!-- 分组列表 -->
+  <ion-list *ngFor="let item of listDivided">
+    <ion-item-divider >
+      {{item.cate}}
+    </ion-item-divider>        
+    <ion-item *ngFor="let val of item.list"> 
+   　 {{val.title}}
+    </ion-item>
+  </ion-list>
+
+  <!-- 滑动删除列表 side='start|end' 表示向左滑向右滑 -->
+  <ion-list>
+    <ion-item-sliding *ngFor='let item of listText'>
+      <ion-item >
+        {{item}}
+      </ion-item>
+      <ion-item-options side='start'>
+        <button ion-button color='dark'>
+          <ion-icon name="home"></ion-icon>                
+        </button>
+        <button ion-button color="secondary">
+          标记未读                         
+        </button>
+        <button ion-button color="danger">
+          删除                                      
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+</ion-list>
+
+
+
+<!-- 栅格  居中-->
+<ion-row justify-content-center>
+  <ion-col size="3" style=text-align:center>6 columns</ion-col>
+  <ion-col size="3">6 columns</ion-col>
+  <ion-col size="3">6 columns</ion-col>
+  <ion-col size="3">6 columns</ion-col>
+  <ion-col size="3">6 columns</ion-col>
+  <ion-col size="3">6 columns</ion-col>
+  <ion-col size="3">6 columns</ion-col>
+  <ion-col size="3">6 columns</ion-col>
+  <ion-col size="3">6 columns</ion-col>
+  <ion-col size="3">6 columns</ion-col>
+  <ion-col size="3">6 columns</ion-col>         
+  <ion-col size="3">6 columns</ion-col>
+
+  <ion-col size="3" style=text-align:center><ion-icon name="add" ></ion-icon></ion-col>
+  <ion-col size="3"><ion-icon name="add"></ion-icon></ion-col>
+  <ion-col size="3"><ion-icon name="add"></ion-icon></ion-col>
+  <ion-col size="3"><ion-icon name="add"></ion-icon></ion-col>
+  <ion-col size="3"><ion-icon name="add"></ion-icon></ion-col>
+  <ion-col size="3"><ion-icon name="add"></ion-icon></ion-col>
+  <ion-col size="3"><ion-icon name="add"></ion-icon></ion-col>
+  <ion-col size="3"><ion-icon name="add"></ion-icon></ion-col>
+</ion-row>
+
+</ion-content>

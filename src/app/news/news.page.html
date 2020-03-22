@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>news</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="presentAlert()" expand="block" fill="outline">
+    弹出框
+  </ion-button>
+
+  <ion-button (click)="presentAlertConfirm()" expand="block" fill="outline">
+    弹出确认框
+  </ion-button>
+
+  <ion-button (click)="presentLoading()" expand="block" fill="outline">
+    加载中
+  </ion-button>
+  
+  <ion-button (click)="presentActionSheet()" expand="block" fill="outline">
+    上拉菜单
+  </ion-button>
+  
+
+  <ion-button (click)="presentToast()" expand="block" fill="outline">
+    提示框
+  </ion-button>
+
+  <ion-button (click)="presentToastWithOptions()" expand="block" fill="outline">
+    带按钮提示框
+  </ion-button>
+  
+
+</ion-content>
