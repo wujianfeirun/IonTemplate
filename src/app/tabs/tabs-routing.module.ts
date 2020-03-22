@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
-    children: [
+    children: [            // children下加的路由都会带上tabs导航栏
       {
         path: 'tab1',
         children: [
@@ -44,6 +44,16 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../news/news.module').then(m => m.NewsPageModule)
+          }
+        ]
+      },
+      {
+        path: 'news/tabs-newsinfo',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../newsinfo/newsinfo.module').then(m => m.NewsinfoPageModule)
           }
         ]
       },

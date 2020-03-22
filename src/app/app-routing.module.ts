@@ -6,7 +6,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   }
-  ,         //二级页面如果不显示tabs，不直接访问
+  ,         //这里加的路由页面不会带tabs导航栏
   {
     path: 'tabs/news/newsinfo',
     loadChildren: () => import('./newsinfo/newsinfo.module').then( m => m.NewsinfoPageModule)

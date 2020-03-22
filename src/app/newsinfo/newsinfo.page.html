@@ -7,6 +7,11 @@
 <ion-content>
 
   <ion-button [routerLink]="['/tabs/news']">
-    页面跳转
+    routerLink返回
   </ion-button>
+
+  <ion-button (click)="navBack()">
+    navControl返回
+  </ion-button>
+
 </ion-content>
