@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-newsinfo',
@@ -10,9 +10,15 @@ import { Router } from '@angular/router';
 export class NewsinfoPage implements OnInit {
 
   constructor(public router: Router,
-    public nav: NavController) { }
+    public nav: NavController,
+    public route:ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.queryParams.subscribe((data)=> {
+      console.log("queryParams传参"+data.name);
+      console.log("queryParams传参"+data.id);
+      console.log("queryParams传参"+data.department);
+    });
   }
 
   navBack(){

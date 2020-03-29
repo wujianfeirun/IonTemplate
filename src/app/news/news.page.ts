@@ -9,6 +9,12 @@ import { Router } from '@angular/router';
 })
 export class NewsPage implements OnInit {
 
+  public obj={
+    name:"wu",
+    id:"12345",
+    department:"tech"
+  }
+  
   ngOnInit() {
   }
 
