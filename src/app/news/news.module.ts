@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { NewsPageRoutingModule } from './news-routing.module';
 
 import { NewsPage } from './news.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    NewsPageRoutingModule
+    
+    NewsPageRoutingModule,
+    RouterModule.forChild([{ path: '', component: NewsPage }])
   ],
   declarations: [NewsPage]
 })

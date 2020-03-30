@@ -30,5 +30,14 @@
     带按钮提示框
   </ion-button>
   
+  <!-- ionic5不能再使用navPush进行跳转,   obj为page.ts中的变量 -->
+  <ion-button [routerLink]="['newsinfo']" [queryParams]="obj">
+      app-routing跳转(routerLink)
+  </ion-button>
+
+  <ion-button [routerLink]="['tabs-newsinfo']"  [queryParams]="obj">
+      tabs-routing跳转(routerLink)
+  </ion-button>
+
 
 </ion-content>

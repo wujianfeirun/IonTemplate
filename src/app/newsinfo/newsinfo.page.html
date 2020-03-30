@@ -1,9 +1,20 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">    
+      <ion-back-button defaultHref="/tabs/news" text="返回"></ion-back-button>   <!-- 返回按钮必须放在toolbar中才能生效 -->
+    </ion-buttons>
     <ion-title>newsinfo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-button [routerLink]="['/tabs/news']">
+    routerLink返回
+  </ion-button>
+
+  <ion-button (click)="navBack()">
+    navControl返回
+  </ion-button>
 
 </ion-content>

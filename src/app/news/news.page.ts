@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, LoadingController, ActionSheetController, ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-news',
@@ -8,10 +9,17 @@ import { AlertController, LoadingController, ActionSheetController, ToastControl
 })
 export class NewsPage implements OnInit {
 
+  public obj={
+    name:"wu",
+    id:"12345",
+    department:"tech"
+  }
+  
   ngOnInit() {
   }
 
-  constructor(public alertController:AlertController,
+  constructor(private router: Router,
+    public alertController:AlertController,
     public loadingController:LoadingController,
     public actionSheetController: ActionSheetController,
     public toastController: ToastController ) {}
@@ -132,4 +140,8 @@ export class NewsPage implements OnInit {
   toast.present();
 }
 
+  //在ts中进行页面跳转
+  navigate(){
+    this.router.navigate(['/detail'])
+  }
 }
